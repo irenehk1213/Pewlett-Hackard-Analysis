@@ -1,0 +1,59 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c20000\c20000\c20000;\cssrgb\c100000\c100000\c100000\c80000;}
+\margl1440\margr1440\vieww12360\viewh7900\viewkind0
+\deftab720
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Departments\
+-\
+dept_no varchar pk\
+dept_name varchar\
+\
+Employees\
+-\
+emp_no int pk\
+birth_date date\
+first_name varchar\
+last_name varchar\
+gender varchar\
+hire_date date\
+\
+Manager\
+-\
+dept_no varchar pk fk - Departments.dept_no\
+emp_no int fk - Employees.emp_no\
+from_date date\
+to_date date\
+\
+Dept_Employees\
+-\
+emp_no int pk fk -< Employees.emp_no\
+dept_no varchar fk -< Departments.dept_no\
+from_date date\
+to_date date\
+\
+Salaries\
+-\
+emp_no pk fk - Employees.emp_no\
+salary int\
+from_date date\
+to_date date\
+\
+titles\
+-\
+emp_no pk fk -< Employees.emp_no\
+title varchar\
+from_date date\
+to_date date\
+\
+\
+\
+\
+\
+\
+\
+\
+}
