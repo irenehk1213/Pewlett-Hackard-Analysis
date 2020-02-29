@@ -1,1 +1,12 @@
 # Pewlett-Hackard-Analysis
+
+## Brief project summary 
+Using tools PostgresSQL and pgAdmin, I've analyzed the six CSV files--departments, dept_emp, dept_manager, employees, salaries, titles-- of the company in order to the organize the database of Pewlett Hackard to be more cleaned and into the most up-to-date version so they can develop the overall structure, policy, workflow...etc. accordingly. 
+
+First of all, I identified the records form tables and established relationship between them using the tool ERD (Entity Relationship Diagram), Quick DBD for this analysis. By setting unique (primary key) identifiers for each row, those keys serve as a link between the tables while foreign keys references another dataset’s primary key. 
+
+![EmployeeDB](https://user-images.githubusercontent.com/59981299/75601787-9376d980-5a73-11ea-8c2a-5359c885f04f.png)
+
+Then, using the ERD as a map, I launched pgAdmin as a GUI in order to write queries in SQL. First, I created a new database named “PH-EmployeeDB” then created tables and imported data from each CSV files into its corresponding table. When I faced troubleshoot error messages, I handled common errors or mismatched data types, and finally queried and exported data for the requested multiple cases from the manager in terms of determining retirement eligibility, narrowing the search for retirement eligibility, joining tables with additional tailored lists under certain circumstances. 
+
+Finally in order to create the new list of potential mentors, as an ultimate goal of the analysis, I will need to create a query that returns a list of current employees eligible for retirement, as well as their most recent titles. I’ve created a new table using an inner join of three tables (titles, salaries, employees) that implies the number of [titles] retiring. As a result, I got total 33118 rows of output. Then, I listed the frequency count of employee titles in order to determine how many employees share the same title. As a result, the title ‘senior engineer’ shared the position mostly with 13651 employees, senior staff followed the next by 12872… and the title manager recorded the least number for the position by 2. Lastly, by referencing the previous two data, I could retrieve the list of potential mentors who has eligibility based on length (date) of the career in the company who are currently working, title (position), birthdate (age). There were 691 eligible mentors as a result. 
